@@ -1,0 +1,143 @@
+/* 🧼 Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1f2330, #2c425f);
+    background-size: 400% 400%;
+    animation: bgPulse 8s ease infinite;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+@keyframes bgPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.fade-in {
+    animation: fadeInBody 1s ease forwards;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 📦 Login Container */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.auth-card {
+    backdrop-filter: blur(14px);
+    background-color: rgba(28, 31, 47, 0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.1);
+    text-align: center;
+    animation: slideFadeIn 0.8s ease forwards;
+    transform: translateY(30px);
+    opacity: 0;
+}
+.auth-card {
+    animation: slideFadeIn 0.8s ease forwards;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@keyframes slideFadeIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 🖊️ Heading */
+.auth-card h2 {
+    margin-bottom: 25px;
+    color: #00ffaa;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* 📥 Inputs */
+.auth-card input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #00ffaa;
+    border-radius: 10px;
+    background-color: #131524;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.auth-card input:focus {
+    border-color: #33ffc4;
+    background-color: #10121b;
+}
+
+/* 🆙 Button */
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00ffaa;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.auth-card button:hover {
+    background-color: #33ffc4;
+}
+
+/* 🔗 Links */
+.auth-card a {
+    color: #00ffaa;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+/* 📝 Messages */
+.auth-card p {
+    font-size: 14px;
+    color: #cceeff;
+    margin-top: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 500px) {
+    .auth-card {
+        padding: 25px 15px;
+    }
+
+    .auth-card h2 {
+        font-size: 22px;
+    }
+}
